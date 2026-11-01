@@ -1,0 +1,19 @@
+[project]
+name = "homebox-mcp"
+version = "1.0.0"
+description = "MCP server for a Homebox inventory: find, add, move and photograph items"
+readme = "README.md"
+requires-python = ">=3.11"
+# Exact pins: `uvx --from git+...@tag` resolves from these alone, with no lock
+# file, so a tag always installs the same versions. Dependabot bumps them.
+dependencies = [
+    "mcp==2.3.0",
+    "httpx==0.28.1",
+]
+
+[project.scripts]
+homebox-mcp = "homebox_mcp.server:main"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"

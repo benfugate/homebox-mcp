@@ -1,0 +1,27 @@
+version: 2
+updates:
+  # The exact pins in pyproject.toml. Merged by hand: a new mcp release can
+  # change the server API, and consumers only pick it up from a new tag anyway.
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    commit-message:
+      prefix: chore
+      include: scope
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    commit-message:
+      prefix: chore
+      include: scope
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
